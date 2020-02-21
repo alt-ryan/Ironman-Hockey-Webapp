@@ -1,1 +1,17 @@
-<h1>home</h1>
+<div class="container">
+    <div class="top" >
+        <p>The Keith Yandle Ironman Streak Watcher</p>
+
+        <p>Keith Yandle has played <strong><%= data[0] %></strong> NHL Regular Season Games </p>
+    </div>
+<div>
+
+<div class="container">
+    <p>Top 10 Ironman Streaks</p>
+
+    <% data[1].forEach((record) => { %>
+        <li>
+            <%= record.firstName; %> <%= record.lastName; %> - <strong><%= record.streak; %> </strong>
+        </li>
+    <% }); %>
+</div>
