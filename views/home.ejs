@@ -1,17 +1,37 @@
-<div class="container">
-    <div class="top" >
-        <p>The Keith Yandle Ironman Streak Watcher</p>
+<!doctype html>
 
-        <p>Keith Yandle has played <strong><%= data[0] %></strong> NHL Regular Season Games </p>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Ironman Streak Watcher</title>
+  <link rel="stylesheet" href="/hockey.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+</head>
+
+<body>
+    <div class="container">
+        <div class="top" >
+            <p> <%= activeStreakLeader %> has the longest active Ironman streak with 
+                <strong> <%= activeStreak %> </strong> consecutive games.
+            </p>
+            <p> He has <strong> <%= data[1] %> </strong> points in total.</p>
+        </div>
     </div>
-<div>
 
-<div class="container">
-    <p>Top 10 Ironman Streaks</p>
-
-    <% data[1].forEach((record) => { %>
-        <li>
-            <%= record.firstName; %> <%= record.lastName; %> - <strong><%= record.streak; %> </strong>
-        </li>
-    <% }); %>
-</div>
+    <div class="container">
+        <div class="top" >
+            <p>Top 10 Ironman Streaks</p>
+            
+            <% data[0].forEach((record) => { %>
+                <li class="
+                    <% if (record.activeStreak) { %> 
+                        activeStreak
+                    <% } %>
+                ">
+                    <%= record.firstName; %> <%= record.lastName; %> - <strong><%= record.streak; %></strong>
+                </li>
+            <% }); %>
+        </div>
+    </div>
+</body>
+</html>
