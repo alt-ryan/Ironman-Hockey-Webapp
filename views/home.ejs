@@ -1,11 +1,11 @@
 <!doctype html>
 
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8">
   <title>Ironman Streak Watcher</title>
   <link rel="stylesheet" href="/hockey.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -18,20 +18,29 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="top" >
-            <p>Top 10 Ironman Streaks</p>
-            
-            <% data[0].forEach((record) => { %>
-                <li class="
-                    <% if (record.activeStreak) { %> 
-                        activeStreak
-                    <% } %>
-                ">
-                    <%= record.firstName; %> <%= record.lastName; %> - <strong><%= record.streak; %></strong>
-                </li>
-            <% }); %>
-        </div>
+    <div class="test">
+        <table class="table table-light table-striped table-hover table-sm">
+            <thead class="thead-dark">
+                <tr>
+                <th scope="col"></th>
+                <th scope="col">Player</th>
+                <th scope="col">Streak</th>
+                </tr>
+            </thead>
+
+                <% data[0].forEach((record) => { %>
+                    <tr>
+                        <td></td>
+                        <td  class="
+                            <% if (record.activeStreak) { %> 
+                                activeStreak
+                            <% } %>
+                        "><%= record.firstName; %> <%= record.lastName; %> </td>
+                        <td><strong><%= record.streak; %></strong></td>
+                    </tr>
+
+                <% }); %>
+        </table>
     </div>
 </body>
 </html>

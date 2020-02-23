@@ -1,7 +1,31 @@
+.test {
+    background-color: #FFFFFF;
+    max-width: 500px;
+    margin: auto;
+
+
+    border: 1px solid black;
+    
+}
+
 .top {
 	text-align: center;
 }
 
 .activeStreak {
     color: red;
+}
+
+table {
+    counter-reset: rowNumber-1;
+}
+
+table tr {
+    counter-increment: rowNumber;
+}
+
+table tr td:first-child::before {
+    content: counter(rowNumber);
+    min-width: 1em;
+    margin-right: 0.5em;
 }
