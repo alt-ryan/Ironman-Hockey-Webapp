@@ -9,38 +9,50 @@
 </head>
 
 <body>
+
+    <div class="page">
     <div class="container">
-        <div class="top" >
-            <p> <%= activeStreakLeader %> has the longest active Ironman streak with 
-                <strong> <%= activeStreak %> </strong> consecutive games.
-            </p>
-            <p> He has <strong> <%= data[1] %> </strong> points in total.</p>
+        <div class="record">
+            <div class="top" >
+                <p> <%= activeStreakLeader %> has the longest active Ironman streak with 
+                    <strong> <%= activeStreak %> </strong> consecutive games.
+                </p>
+            </div>
+
+            <table class="table table-light table-striped table-hover table-sm table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                    <th scope="col" class="rowNumber"></th>
+                    <th scope="col">Player</th>
+                    <th scope="col">Streak</th>
+                    </tr>
+                </thead>
+
+                    <% data[0].forEach((record) => { %>
+                        <% var link = "https://www.nhl.com/player/" + record.playerId %>
+                        <tr>
+                            <!--Row number column-->
+                            <td></td>
+
+                            <!--Name-->
+                            <td>
+                                <a href="<%=link%>">
+                                    <%= record.firstName; %> <%= record.lastName; %> 
+                                </a> 
+                            </td>
+
+                            <!--Streak-->
+                            <td class="
+                                <% if (record.activeStreak) { %> 
+                                    activeStreak
+                                <% } %>
+                            "><strong><%= record.streak; %></strong></td>
+                        </tr>
+
+                    <% }); %>
+            </table>
         </div>
     </div>
-
-    <div class="test">
-        <table class="table table-light table-striped table-hover table-sm">
-            <thead class="thead-dark">
-                <tr>
-                <th scope="col"></th>
-                <th scope="col">Player</th>
-                <th scope="col">Streak</th>
-                </tr>
-            </thead>
-
-                <% data[0].forEach((record) => { %>
-                    <tr>
-                        <td></td>
-                        <td  class="
-                            <% if (record.activeStreak) { %> 
-                                activeStreak
-                            <% } %>
-                        "><%= record.firstName; %> <%= record.lastName; %> </td>
-                        <td><strong><%= record.streak; %></strong></td>
-                    </tr>
-
-                <% }); %>
-        </table>
     </div>
 </body>
 </html>
