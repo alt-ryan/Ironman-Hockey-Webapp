@@ -1,4 +1,7 @@
-
+html{
+    background-color:#212529;
+    
+}
 
 
 .page {
@@ -7,6 +10,8 @@
     line-height: 1.55;
     color: white;
     background-color:#212529;
+    padding: 30px;
+    font-family: 'Oxygen' ;
 }
 
 .record {
@@ -14,11 +19,13 @@
     max-width: 40%;
     margin: auto;
     color: black;
-    padding: 3.5px;
+    padding-left: 2.5px;
+    padding-right:2.5px;
 }
 
 .top {
-	text-align: center;
+    text-align: center;
+    padding: 15px;
 }
 
 .activeStreak {
@@ -31,7 +38,6 @@ table {
 }
 
 td {
-    padding: 3.5px;
     text-align: center;
 }
 .rowNumber {
