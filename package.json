@@ -4,6 +4,7 @@
   "description": "Ironman streak watch",
   "main": "app.js",
   "dependencies": {
+    "ejs": "^3.0.1",
     "express": "^4.17.1",
     "nodemon": "^2.0.2",
     "request": "^2.88.2"
@@ -14,7 +15,8 @@
   },
   "author": "rmckay",
   "engines": {
-    "node": "13.7.0"
+    "node": "13.7.0",
+    "npm": "6.13.7"
   },
   "license": "ISC"
 }
