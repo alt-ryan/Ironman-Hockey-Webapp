@@ -10,8 +10,11 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "author": "rmckay",
+  "engines": {
+    "node": "13.7.0"
+  },
   "license": "ISC"
 }
